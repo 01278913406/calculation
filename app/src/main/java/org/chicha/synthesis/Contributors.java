@@ -41,8 +41,8 @@ public class Contributors extends AppCompatActivity {
             icTerry.setVisibility(View.VISIBLE);
             icQuetz.setVisibility(View.VISIBLE);
 
-            imgTerry.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_terry));
-            imgQuetz.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_quetz));
+           /* imgTerry.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_terry));
+            imgQuetz.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_quetz));*/
         }
 
         int i;
