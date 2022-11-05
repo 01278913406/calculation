@@ -1,0 +1,81 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:title="General">
+
+        <SwitchPreference
+            android:title="Dynamic Precision"
+            android:summary="Let TermCalc determine the number of decimal places to display based on your input."
+            android:key="isDynamic"
+            android:disableDependentsState="true"
+            android:icon="@drawable/ic_baseline_auto_awesome_24"
+            android:defaultValue="true"/>
+
+        <SeekBarPreference
+            android:title="Maximum Decimal Places"
+            android:summary="Note: Some complex operations may take noticeably longer to complete if this value is greater than 10."
+            android:defaultValue="9"
+            android:dependency="isDynamic"
+            android:max="17"
+            app:min="1"
+            android:shouldDisableView="true"
+            android:key="precision"
+            app:showSeekBarValue="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="Appearance">
+
+        <SwitchPreference
+            android:title="Focus Mode"
+            android:summary="@string/focus_summary"
+            android:key="isFocus"
+            android:icon="@drawable/ic_baseline_do_not_disturb_on_24"
+            android:defaultValue="false"/>
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/custom_fab_entries"
+            android:entryValues="@array/custom_fab_values"
+            android:key="whereCustom"
+            app:icon="@drawable/ic_function"
+            app:title="Show Custom Constants/Functions"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreference
+            android:title="Live Expression Evaluation"
+            android:summary="Calculate and display expression results before pressing the equals button."
+            android:key="showPreviousExpression"
+            android:icon="@drawable/ic_baseline_history_24"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="Data Usage">
+
+        <ListPreference
+            android:defaultValue="3"
+            android:entries="@array/currency_entries"
+            android:entryValues="@array/currency_values"
+            android:key="fetchRate"
+            app:icon="@drawable/ic_baseline_signal_cellular_alt_24"
+            app:title="When to Fetch Exchange Rates"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="Advanced">
+
+        <SwitchPreference
+            android:title="Prioritize Coefficients"
+            android:summary="Ignore PEMDAS and prioritize evaluating coefficients in front of parentheses.\n(WARNING: Only enable this if you know what you're doing! Enabling this can yield incorrect calculation results)"
+            android:key="prioritizeCoefficients"
+            android:icon="@drawable/ic_round_warning_24"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
